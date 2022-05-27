@@ -1,0 +1,62 @@
+server:
+  forward-headers-strategy: framework
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        health:
+          enabled: false
+  credhub:
+    url: https://credhub.service.cf.internal:8844/
+    path: "/fallback/url/path"
+  security:
+    oauth2:
+      client:
+        registration:
+          uaa:
+            provider: uaa
+            client-id: ${scs.dashboard.client-id}
+            client-secret: ${scs.dashboard.client-secret}
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authentication-method: basic
+            scope: openid,cloud_controller.read
+        provider:
+          uaa:
+            token-uri: ${uaa.token-uri}
+            authorization-uri: ${uaa.uri}/oauth/authorize
+            jwk-set-uri: ${uaa.jwk-set-uri}
+            user-info-uri: ${uaa.uri}/userinfo
+            user-name-attribute: user_name
+      resourceserver:
+        jwt:
+          issuer-uri: ${uaa.token-uri}
+          jwk-set-uri: ${uaa.jwk-set-uri}
+  mvc:
+    pathmatch:
+      use-suffix-pattern: true
+      use-registered-suffix-pattern: false
+
+uaa:
+  uri: https://uaa.ocfps.ics-ocf-test-aws.travp.net
+  token-uri: ${uaa.uri}/oauth/token
+  jwk-set-uri: ${uaa.uri}/token_keys
+
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+scs:
+  credhub:
+    path: "${spring.credhub.path}"
+  config-server:
+    authorization-uri: ${uaa.uri}
+    service-instance-id: ${spring.cloud.appbroker.service-instance-id}
+
+
+ 

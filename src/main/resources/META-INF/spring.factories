@@ -1,0 +1,3 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.starkandwayne.springcloudconfigserver.env.VcapServicesEnvironmentPostProcessor,\
+com.starkandwayne.springcloudconfigserver.env.CredHubPropertiesPostProcessor

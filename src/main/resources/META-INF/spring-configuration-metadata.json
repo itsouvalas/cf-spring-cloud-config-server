@@ -1,0 +1,57 @@
+{
+    "groups": [
+
+      {
+        "name": "scs.config-server",
+        "type": "com.starkandwayne.springcloudconfigserver.auth.ResourceServerConfiguration$ConfigServerProperties",
+        "sourceType": "com.starkandwayne.springcloudconfigserver.auth.ResourceServerConfiguration$ConfigServerProperties"
+      },
+      {
+        "name": "spring.cloud.config.server.credhub",
+        "type": "com.starkandwayne.springcloudconfigserver.health.CredHubEnvironmentProperties",
+        "sourceType": "com.starkandwayne.springcloudconfigserver.health.CredHubEnvironmentProperties"
+      },
+      {
+        "name": "spring.cloud.config.server.vafigserver.ult",
+        "type": "io.pivotal.spring.cloud.configserver.vault.VaultRelayProperties",
+        "sourceType": "com.starkandwayne.springcloudconfigserver..vault.VaultRelayProperties"
+      }
+    ],
+    "properties": [
+
+      {
+        "name": "scs.config-server.authorization-uri",
+        "type": "java.lang.String",
+        "sourceType": "com.starkandwayne.springcloudconfigserver.auth.ResourceServerConfiguration$ConfigServerProperties"
+      },
+      {
+        "name": "scs.config-server.service-instance-id",
+        "type": "java.lang.String",
+        "sourceType": "com.starkandwayne.springcloudconfigserver.auth.ResourceServerConfiguration$ConfigServerProperties"
+      },
+      {
+        "name": "spring.cloud.config.server.vault.host",
+        "type": "java.lang.String",
+        "sourceType": "com.starkandwayne.springcloudconfigserver.vault.VaultRelayProperties"
+      },
+      {
+        "name": "spring.cloud.config.server.vault.port",
+        "type": "java.lang.Integer",
+        "sourceType": "com.starkandwayne.springcloudconfigserver.vault.VaultRelayProperties",
+        "defaultValue": 8200
+      },
+      {
+        "name": "spring.cloud.config.server.vault.scheme",
+        "type": "java.lang.String",
+        "sourceType": "com.starkandwayne.springcloudconfigserver.vault.VaultRelayProperties",
+        "defaultValue": "http"
+      },
+      {
+        "name": "spring.cloud.config.server.vault.skip-ssl-validation",
+        "type": "java.lang.Boolean",
+        "sourceType": "com.starkandwayne.springcloudconfigserver.vault.VaultRelayProperties",
+        "defaultValue": false
+      }
+    ],
+    "hints": []
+  }
