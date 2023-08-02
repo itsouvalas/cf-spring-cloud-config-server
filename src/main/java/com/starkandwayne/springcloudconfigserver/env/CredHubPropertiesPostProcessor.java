@@ -64,6 +64,9 @@ public class CredHubPropertiesPostProcessor implements EnvironmentPostProcessor 
    private CredHubOperations buildMtlsCredHubOperations(String runtimeCredHubUrl) {
       CredHubProperties credHubProperties = new CredHubProperties();
       credHubProperties.setUrl(runtimeCredHubUrl);
+
+      System.out.println("Creating CredHubOperations with URL: " + runtimeCredHubUrl); //logging
+
       CredHubTemplateFactory credHubTemplateFactory = new CredHubTemplateFactory();
       return credHubTemplateFactory.credHubTemplate(credHubProperties, new ClientOptions());
    }
