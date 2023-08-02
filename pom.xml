@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.starkandwayne</groupId>
 	<artifactId>spring-cloud-config-server</artifactId>
-	<version>1.1.1-SCS-3.1.37</version>
+	<version>1.1.2-SCS-3.1.37</version>
 	<name>spring-cloud-config-server</name>
 	<description>Stark &amp; Wayne Spring Cloud Congfig Server based on Greenwich SR3</description>
 	<properties>
