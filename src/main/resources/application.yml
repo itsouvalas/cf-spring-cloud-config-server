@@ -9,7 +9,6 @@ spring:
           enabled: false
   credhub:
     url: https://credhub.service.cf.internal:8844/
-    path: "/fallback/url/path"
   security:
     oauth2:
       client:
